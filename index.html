@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>minDDraw</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Matías Gonta">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="images/minddraw-logo.ico"></link>
+</head>
+<body>
+    <main class="container">
+        <section class="tools-board">
+          <div class="logo-box">
+            <a href="index.html">
+              <img src="images/minddraw-logo.png" alt="minddraw-logo.png" id="logo">
+            </a>
+          </div>
+          <div class="separator"></div>
+          <div class="sharpes-box">
+            <h4 class="section-title">Sharpes</h4>
+            <ul class="options">
+              <li class="tool" id="circle">
+                <i class="fa-solid fa-circle"></i>
+                <span>Circle</span>
+              </li>
+              <li class="tool" id="triangle">
+                <i class="fa-sharp fa-solid fa-play fa-rotate-270"></i>
+                <span>Triangle</span>
+              </li>
+              <li class="tool" id="rectangle">
+                <i class="fa-solid fa-square"></i>
+                <span>Rectangle</span>
+              </li>
+              <li>
+                <input type="checkbox" id="fill-check">
+                <span>Fill</span>
+              </li>
+            </ul>
+          </div>
+          <div class="separator"></div>
+          <div class="options-box">
+            <h4 class="section-title">Options</h4>
+            <ul class="options">
+              <li class="tool" id="brush">
+                <i class="fa-solid fa-paintbrush"></i>
+                <span>Brush</span>
+              </li>
+              <li class="tool" id="eraser">
+                <i class="fa-solid fa-eraser"></i>
+                <span>Eraser</span>
+              </li>
+              <li>
+                <input type="range" id="range-density" min="1" max="30" value="5">
+              </li>
+            </ul>
+          </div>
+          <div class="separator"></div>
+          <div class="colors-box">
+            <h4 class="section-title">Colors</h4>
+            <ul class="options">
+              <li class="color">
+                <input type="color" id="color-picker" value="#000000">
+              </li>
+              <li class="color" id=""></li>
+              <li class="color" id=""></li>
+              <li class="color" id=""></li>
+              <li class="color" id=""></li>
+            </ul>
+          </div>
+        </section>
+        <section class="canvas-board">
+          <canvas></canvas>
+        </section>
+        <section class="functions-board">
+          <button id="clear-canvas">Clear Canvas</button>
+          <div class="mention">
+            <p>Coded by <span id="name">Matías Gonta</span>.</p>
+            <div class="popup">
+              <div class="close">&times;</div>
+              <div class="popup-container">
+                  <h3 class="title">Social Networks</h3>
+                  <div>
+                      <div class="socials">
+                          <img src="images/socials/linkedin-logo2.jpg" alt="linkedin-logo" id="linkedin">
+                          <a href="https://www.linkedin.com/in/mat%C3%ADas-gonta/"  target="_blank">Linkedin</a>
+                      </div>
+                      <div class="socials">
+                          <img src="images/socials/github-logo2.png" alt="github-logo" id="github">
+                          <a href="https://github.com/MatiasGonta"  target="_blank">GitHub</a>
+                      </div>
+                      <div class="socials">
+                          <img src="images/socials/instagram-logo2.jpg" alt="instagram-logo" id="instagram">
+                          <a href="https://www.instagram.com/matigonta_/"  target="_blank">Instagram</a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <button id="save-canvas">Save your Canvas</button>
+        </section>
+    </main>
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/77f004acae.js" crossorigin="anonymous"></script>
+</body>
+</html>
