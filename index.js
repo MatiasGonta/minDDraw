@@ -9,11 +9,11 @@ let mouseX, mouseY, canvasShot, previousTool, isDrawing = false, tool = "brush",
 const colorPicker = document.getElementById("color-picker");
 
 //History Colors
-const firstHistoryColor = document.querySelector(".color:nth-child(2)");
-const secondHistoryColor = document.querySelector(".color:nth-child(3)");
-const thirdHistoryColor = document.querySelector(".color:nth-child(4)");
-const fourthHistoryColor = document.querySelector(".color:nth-child(5)");
-const fifthHistoryColor = document.querySelector(".color:nth-child(6)");
+const firstHistoryColor = document.querySelector(".tool-list__tool--color:nth-child(2)");
+const secondHistoryColor = document.querySelector(".tool-list__tool--color:nth-child(3)");
+const thirdHistoryColor = document.querySelector(".tool-list__tool--color:nth-child(4)");
+const fourthHistoryColor = document.querySelector(".tool-list__tool--color:nth-child(5)");
+const fifthHistoryColor = document.querySelector(".tool-list__tool--color:nth-child(6)");
 firstHistoryColor.id = 'rgb(0, 0, 0)';
 secondHistoryColor.id = 'rgb(255, 0, 0)';
 thirdHistoryColor.id = 'rgb(0, 0, 255)';
@@ -28,8 +28,8 @@ let historyColor = [
     fifthHistoryColor.id
 ];
 
-const toolButtons = document.querySelectorAll(".tool");
-const colorButtons = document.querySelectorAll(".color");
+const toolButtons = document.querySelectorAll(".tool-list__tool:not(.tool-list__tool--color)");
+const colorButtons = document.querySelectorAll(".tool-list__tool--color");
 
 const rangeDensity = document.getElementById("range-density");
 
@@ -101,14 +101,14 @@ const drawing = (e) => {
     drawingFunction();
 }
 
-//Canvas Listeners
+// Canvas Listeners
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", ()=> {
     isDrawing = false;
 });
 
-//Handle Tools, Color Buttons, Draw Density input, Color Picker input and History Colors
+// Handle Tools
 toolButtons.forEach(button => {
     button.addEventListener("click", () => {
         tool = button.id;
@@ -116,21 +116,24 @@ toolButtons.forEach(button => {
         if (previousTool) {
             previousTool.style.color = '#FF6B6B';
         }
-        button.style.color = '#FFCAAF';
+        button.style.color = '#B61919';
         previousTool = button;
     });
 });
 
+// Handle Color Buttons
 colorButtons.forEach(button => {
     button.addEventListener("click", ()=>{
         color = button.id;
     });
 });
 
+// Draw Density Input
 rangeDensity.addEventListener("change", ()=>{
     lineWidth = rangeDensity.value;
 })
 
+// Handle selected color
 colorPicker.addEventListener("change", ()=> {
     color = colorPicker.value;
     historyColor.pop();
@@ -149,9 +152,9 @@ colorPicker.addEventListener("change", ()=> {
     fifthHistoryColor.id = historyColor[4];
 });
 
-//Functions Buttons
-const clearCanvas = document.getElementById("clear-canvas");
-const saveCanvas = document.getElementById("save-canvas");
+// Canvas Buttons
+const clearCanvas = document.querySelector(".canvas-buttons__clear");
+const saveCanvas = document.querySelector(".canvas-buttons__save");
 const link = document.getElementById("download-link");
 
 clearCanvas.addEventListener("click", ()=> {
@@ -166,13 +169,13 @@ saveCanvas.addEventListener("click", ()=> {
 
 // Menu Bar
 const toolsBoard = document.querySelector(".tools-board");
-const lines = document.querySelectorAll(".line");
-const menuBar = document.querySelector(".menu-bar");
+const lines = document.querySelectorAll(".menu-bar__wrapper__line");
+const menuBar = document.querySelector(".menu-bar__wrapper");
 menuBar.addEventListener("click", ()=> {
-    lines[0].classList.toggle("activeLine1");
-    lines[1].classList.toggle("activeLine2");
-    lines[2].classList.toggle("activeLine3");
+    lines[0].classList.toggle("menu-bar__wrapper__line--first-active");
+    lines[1].classList.toggle("menu-bar__wrapper__line--second-active");
+    lines[2].classList.toggle("menu-bar__wrapper__line--third-active");
 
-    menuBar.classList.toggle("mb-active");
-    toolsBoard.classList.toggle("nb-active")
+    menuBar.classList.toggle("menu-bar__wrapper---active");
+    toolsBoard.classList.toggle("tools-board--active")
 });

@@ -10,89 +10,175 @@
     <link rel="icon" href="assets/minddraw-logo.ico" />
 </head>
 <body>
-  <div id="root">
     <header>
-      <div>
-        <div class="menu-bar">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+      <div class="menu-bar">
+        <div class="menu-bar__wrapper">
+          <div class="menu-bar__wrapper__line"></div>
+          <div class="menu-bar__wrapper__line"></div>
+          <div class="menu-bar__wrapper__line"></div>
         </div>
       </div>
       <nav class="tools-board">
         <div class="logo-box">
-          <img src="assets/minddraw-logo.png" alt="minddraw-logo" id="logo" />
+          <img src="assets/minddraw-logo.png" alt="minddraw-logo" class="logo-box__img" />
         </div>
-        <div class="separator first"></div>
+
         <div class="sharpes-box">
-          <h4>Sharpes</h4>
-          <ul class="options">
-            <li class="tool" id="circle">
-              <i class="fa-solid fa-circle"></i>
-              <span>Circle</span>
+          <h4 class="sharpes-box__title">Sharpes</h4>
+
+          <ul class="tool-list">
+            <li class="tool-list__tool" id="circle">
+              <div class="tool-list__tool__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                </svg>
+              </div>
+              <span class="tool-list__tool__name">Circle</span>
             </li>
-            <li class="tool" id="triangle">
-              <i class="fa-sharp fa-solid fa-play fa-rotate-270"></i>
-              <span>Triangle</span>
+
+            <li class="tool-list__tool" id="triangle">
+              <div class="tool-list__tool__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+                </svg>
+              </div>
+              <span class="tool-list__tool__name">Triangle</span>
             </li>
-            <li class="tool" id="rectangle">
-              <i class="fa-solid fa-square"></i>
-              <span>Rectangle</span>
+
+            <li class="tool-list__tool" id="rectangle">
+              <div class="tool-list__tool__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                </svg>
+              </div>
+              <span class="tool-list__tool__name">Rectangle</span>
             </li>
+
             <li>
               <input type="checkbox" id="fill-check" />
-              <span>Fill</span>
+              <span class="tool-list__tool__name">Fill</span>
             </li>
           </ul>
         </div>
-        <div class="separator"></div>
+        
         <div class="options-box">
-          <h4>Options</h4>
-          <ul class="options">
-            <li class="tool" id="brush">
-              <i class="fa-solid fa-paintbrush"></i>
-              <span>Brush</span>
+          <h4 class="options-box__title">Options</h4>
+
+          <ul class="tool-list">
+            <li class="tool-list__tool" id="brush">
+              <div class="tool-list__tool__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M3 21v-4a4 4 0 1 1 4 4h-4" />
+                  <path d="M21 3a16 16 0 0 0 -12.8 10.2" />
+                  <path d="M21 3a16 16 0 0 1 -10.2 12.8" />
+                  <path d="M10.6 9a9 9 0 0 1 4.4 4.4" />
+                </svg>
+              </div>
+              <span class="tool-list__tool__name">Brush</span>
             </li>
-            <li class="tool" id="eraser">
-              <i class="fa-solid fa-eraser"></i>
-              <span>Eraser</span>
+
+            <li class="tool-list__tool" id="eraser">
+              <div class="tool-list__tool__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M19 20h-10.5l-4.21 -4.3a1 1 0 0 1 0 -1.41l10 -10a1 1 0 0 1 1.41 0l5 5a1 1 0 0 1 0 1.41l-9.2 9.3" />
+                  <path d="M18 13.3l-6.3 -6.3" />
+                </svg>
+              </div>
+              <span class="tool-list__tool__name">Eraser</span>
             </li>
-            <li>
+
+            <li class="tool-list__tool">
               <input type="range" id="range-density" min="1" max="30" value="5">
             </li>
           </ul>
         </div>
-        <div class="separator"></div>
+        
         <div class="colors-box">
-          <h4>Colors</h4>
-          <ul class="options">
-            <li class="color">
+          <h4 class="colors-box__title">Colors</h4>
+
+          <ul class="tool-list tool-list--color">
+            <li class="tool-list__tool tool-list__tool--color">
               <input type="color" id="color-picker" value="#000000">
             </li>
-            <li class="color" id=""></li>
-            <li class="color" id=""></li>
-            <li class="color" id=""></li>
-            <li class="color" id=""></li>
-            <li class="color" id=""></li>
+            <li class="tool-list__tool tool-list__tool--color" id=""></li>
+            <li class="tool-list__tool tool-list__tool--color" id=""></li>
+            <li class="tool-list__tool tool-list__tool--color" id=""></li>
+            <li class="tool-list__tool tool-list__tool--color" id=""></li>
+            <li class="tool-list__tool tool-list__tool--color" id=""></li>
           </ul>
         </div>
       </nav>
     </header>
+
     <main>
-      <article>
-        <section class="canvas-board">
-          <canvas></canvas>
-        </section>
-        <section class="functions-buttons">
-          <button id="clear-canvas">Clear Canvas</button>
+      <section>
+        <article class="canvas-board">
+          <canvas class="canvas-board__canvas"></canvas>
+        </article>
+
+        <article class="canvas-buttons">
+          <button class="canvas-buttons__clear">Clear Canvas</button>
           <a href="" download="" id="download-link">
-            <button id="save-canvas">Save your Canvas</button>
+            <button class="canvas-buttons__save">Save your Canvas</button>
           </a>
-        </section>
-      </article>
+        </article>
+      </section>
     </main>
-  </div>
   <script src="index.js"></script>
-  <script src="https://kit.fontawesome.com/77f004acae.js" crossorigin="anonymous"></script>
 </body>
 </html>
