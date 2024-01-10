@@ -27,6 +27,7 @@ body {
 }
 
 .tools-board, .canvas-buttons {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -38,7 +39,15 @@ body {
   padding: 10px;
   border: none;
   border-radius: 15px;
-  background: #fff;
+  background-color: #fff;
+}
+
+.tools-board__pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#e5e7eb 1px,transparent 1px);
+  background-size: 16px 16px;
 }
 
 .logo-box,
@@ -51,6 +60,7 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-evenly;
+  z-index: 10;
 }
 
 .sharpes-box__title,
@@ -77,6 +87,7 @@ body {
   display: flex;
   gap: 2px;
   align-items: center;
+  transition: color 250ms ease-in-out;
   cursor: pointer;
 }
 
@@ -110,6 +121,7 @@ body {
   height: 25px;
   border: 1px solid var(--second-main-color);
   border-radius: 50%;
+  transition: border 150ms linear;
   cursor: pointer;
 }
 
@@ -216,6 +228,7 @@ body {
   height: 15px;
   border-radius: 50%;
   background: var(--first-main-color);
+  transition: background 250ms ease-in-out;
   cursor: pointer;
 }
 
@@ -263,9 +276,14 @@ main {
 
 .canvas-buttons__clear,
 .canvas-buttons__save {
-  width: 300px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  width: 275px;
   height: 50px;
-  font-size: 20px;
+  font-size: 18px;
   background: var(--first-main-color);
   color: var(--fourth-main-color);
   border: none;
@@ -287,6 +305,103 @@ main {
   transform: scale(0.95);
 }
 
+.canvas-buttons__clear {
+  gap: 18px;
+}
+
+.icon-container{
+  position: relative;
+}
+
+.erase-container {
+  position: relative;
+  width: 15px;
+  height: 25px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+  background-color: #fff;
+  transform: rotate(45deg);
+  transition: all 1s ease-out;
+  z-index: 2;
+}
+
+.canvas-buttons__clear:hover .erase-container {
+  transform: translateX(10px) rotate(45deg);
+}
+
+.erase-container__fragment {
+  width: 100%;
+}
+
+.erase-container__fragment--top {
+  background-color: #1f89ac;
+  height: 30%;
+  border-radius: 2px 2px 0 0;
+}
+
+.erase-container__fragment--bottom {
+  background-color: #db544a;
+  height: 70%;
+  border-radius: 0 0 2px 2px;
+}
+
+.erase-container__draw {
+  position: absolute;
+  bottom: -1px;
+  right: -2px;
+  width: 12.5px;
+  height: 1px;
+  background-color: #000;
+  transition: all 1s linear;
+  z-index: 1;
+}
+
+.canvas-buttons__clear:hover .erase-container__draw {
+  width: 0px;
+}
+
+.folder-container {
+  width: 40px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.folder-container__file-back {
+  z-index: 1;
+  width: 80%;
+  height: auto;
+}
+
+.folder-container__file-page {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease-out;
+}
+
+.folder-container__file-front {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  opacity: 0.95;
+  transform-origin: bottom;
+  transition: all 0.3s ease-out;
+  z-index: 3;
+}
+
+.canvas-buttons__save:hover .folder-container__file-page {
+  transform: translateY(-5px);
+}
+
+.canvas-buttons__save:hover .folder-container__file-front {
+  transform: rotateX(30deg);
+}
+
 @keyframes sb-slide {
   0% {
     transform: translateX(-100%);
@@ -305,7 +420,11 @@ main {
 @media screen and (max-width: 1150px) {
   .tools-board {
     width: 95vw;
-    justify-content: space-between;
+    justify-content: space-evenly;
+  }
+
+  .logo-box {
+    display: none;
   }
 
   .tool-list__tool__name {
@@ -333,6 +452,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: space-evenly;
     width: 30px;
     height: 30px;
     top: 10px;
@@ -377,7 +497,6 @@ main {
     width: 210px;
     height: 84vh;
     margin: 0;
-    border: 1px solid #ccc;
     background: var(--fourth-main-color);
     transform: translate(-100%);
     transition: all 600ms;
@@ -385,7 +504,10 @@ main {
 
   .tools-board--active {
     display: flex;
+    justify-content: space-between;
     animation: sb-slide 2s ease forwards;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
   
   .logo-box,
@@ -393,7 +515,13 @@ main {
   .options-box,
   .colors-box {
     width: 100%;
+    height: auto;
     display: flex;
+    justify-content: flex-start;
+  }
+
+  .logo-box {
+    max-height: 90px;
   }
 
   .tool-list {
@@ -407,15 +535,6 @@ main {
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 10px;
   }
-  
-  .tool-list__tool__name {
-    display: inline;
-  }
-
-  #fill-check {
-    left: 3px;
-    margin-right: 2px;
-  }
 
   #range-density {
     background: #fff;
@@ -425,17 +544,29 @@ main {
     margin: 10px auto;
   }
 
+  .tool-list__tool__name {
+    display: inline;
+  }
+
+  #fill-check {
+    left: 3px;
+    margin-right: 2px;
+  }
+
   .canvas-buttons__clear,
   .canvas-buttons__save {
-    max-width: 200px;
-    margin: 0 5px;
+    width: 225px;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 600px) {
   .canvas-buttons__clear,
   .canvas-buttons__save {
-    max-width: 150px;
+    width: 175px;
     margin: 0 5px;
+  }
+
+  .canvas-buttons__save {
+    gap: 5px;
   }
 }
