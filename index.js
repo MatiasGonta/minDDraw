@@ -28,7 +28,7 @@ let historyColor = [
     fifthHistoryColor.id
 ];
 
-const toolButtons = document.querySelectorAll(".tool-list__tool:not(.tool-list__tool--color)");
+const toolButtons = document.querySelectorAll(".tool-list__tool:not(.tool-list__tool--color):not(:has(#range-density))");
 const colorButtons = document.querySelectorAll(".tool-list__tool--color");
 
 const rangeDensity = document.getElementById("range-density");
