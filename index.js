@@ -179,10 +179,3 @@ menuBar.addEventListener("click", ()=> {
     menuBar.classList.toggle("menu-bar__wrapper---active");
     toolsBoard.classList.toggle("tools-board--active")
 });
-
-// Handle dynamic date for footer copyright
-const currentDate = new Date();
-const currentYear = currentDate.getFullYear();
-
-const copyrightDateRef = document.querySelector(".footer-container__info__copyright__date");
-copyrightDateRef.innerHTML = `${currentYear}`
