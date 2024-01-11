@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@font-face {
+  font-family: Poppins;
+  src: url(./fonts/Poppins-Regular.ttf);
+}
 
 :root {
   --first-main-color: #FF6B6B;
@@ -13,6 +16,7 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  font-family: Poppins;
 }
 
 body {
