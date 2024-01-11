@@ -169,16 +169,22 @@ saveCanvas.addEventListener("click", ()=> {
 
 // Menu Bar
 const toolsBoard = document.querySelector(".tools-board");
+const toolBoardCloseModal = document.querySelector(".tools-board__close-modal");
 const lines = document.querySelectorAll(".menu-bar__wrapper__line");
 const menuBar = document.querySelector(".menu-bar__wrapper");
-menuBar.addEventListener("click", ()=> {
+
+const handleToolsBoard = () => {
     lines[0].classList.toggle("menu-bar__wrapper__line--first-active");
     lines[1].classList.toggle("menu-bar__wrapper__line--second-active");
     lines[2].classList.toggle("menu-bar__wrapper__line--third-active");
 
     menuBar.classList.toggle("menu-bar__wrapper---active");
     toolsBoard.classList.toggle("tools-board--active")
-});
+    toolBoardCloseModal.classList.toggle("tools-board__close-modal--active");
+}
+
+menuBar.addEventListener("click", handleToolsBoard);
+toolBoardCloseModal.addEventListener("click", handleToolsBoard);
 
 // Handle dynamic date for footer copyright
 const currentDate = new Date();

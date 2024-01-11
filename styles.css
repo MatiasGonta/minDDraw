@@ -23,7 +23,9 @@ body {
 
 /*Tools Board*/
 .menu-bar {
+  position: relative;
   display: none;
+  z-index: 100;
 }
 
 .tools-board {
@@ -41,6 +43,27 @@ body {
   border-radius: 15px;
   background-color: #fff;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  z-index: 100;
+}
+
+.tools-board__close-modal {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 99;
+}
+
+.tools-board__close-modal--active {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
 }
 
 .tools-board__pattern {

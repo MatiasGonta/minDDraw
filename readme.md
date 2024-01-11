@@ -10,6 +10,8 @@ minDDraw is a drawing website similar to Microsoft Paint, which allows users to 
 
 ![minDDraw-screenshot!](./assets/minddraw-screenshot.png)
 
+You can <a href="https://www.youtube.com/watch?v=yS0JPU53X7o" target="_blank">**click here**</a> to see an overview of the page.
+
 ## Features
 
 - Toolbar: The application includes a toolbar at the top, offering various drawing tools such as shapes, colors, and more.
@@ -50,6 +52,8 @@ If you have any questions, concerns or interests, feel free to contact me.
 minDDraw es un sitio web de dibujo similar a Microsoft Paint, que permite a los usuarios dar rienda suelta a su creatividad y crear obras de arte digitales. El proyecto proporciona una interfaz fácil de usar con una barra de herramientas en la parte superior que incluye varias herramientas de dibujo como formas, colores y más. Tiene un lienzo donde los usuarios pueden dibujar, y en la parte inferior hay dos botones: uno para borrar completamente el lienzo y otro para descargar el dibujo creado.
 
 ![minDDraw-screenshot!](./assets/minddraw-screenshot.png)
+
+Puedes hacer <a href="https://www.youtube.com/watch?v=yS0JPU53X7o" target="_blank">**clic aquí**</a> para una visión general de la página.
 
 ## Características
 
